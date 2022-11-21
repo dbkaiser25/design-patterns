@@ -1,5 +1,9 @@
 package state;
 
+/**
+ * An interface that defines a type of state
+ * @author dbkaiser
+ */ 
 public interface State 
 {
     public String pressHomeButton();

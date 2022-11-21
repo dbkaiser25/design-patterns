@@ -1,5 +1,8 @@
 package state;
 
+/**
+ * A class for a TV object that can have different states
+ */
 public class TV 
 {
     private State HomeState;
@@ -9,44 +12,54 @@ public class TV
 
     public TV()
     {
-        state = HomeState;
         NetflixState = new NetflixState(this);
         HomeState = new HomeState(this);
         HuluState = new HuluState(this);
         state = new HomeState(this);
-        //setState(HomeState);
-        //setState(null);
-        //state = null;
+        state = HomeState;
     }
 
+    /**
+     * Defines the behaviour when event home button is pressed
+     * @return A string of the action
+     */
     public String pressHomeButton()
     {
-        //setState(HomeState);
-        String temp = state.pressHomeButton();
-        //state = HomeState;
-        return temp;
+        return state.pressHomeButton();
     }
 
+    /**
+     * Defines the behaviour when event netflix button is pressed
+     * @return A string of the action
+     */
     public String pressNetflixButton()
     {
-        String temp = state.pressNetflixButton();
-        //state = NetflixState;
-        return temp;
+        return state.pressNetflixButton();
     }
 
+    /**
+     * Defines the behaviour when event hulu button is pressed
+     * @return A string of the action
+     */
     public String pressHuluButton()
     {
-        String temp = state.pressHuluButton();
-        //state = HuluState;
-        return temp;
+        return state.pressHuluButton();
     }
 
+    /**
+     * Defines the behaviour when event movie button is pressed
+     * @return A string of the action
+     */
     public String pressMovieButton()
     {
         //String temp = state.pressMovieButton();
         return state.pressMovieButton();
     }
 
+    /**
+     * Defines the behaviour when tv button is pressed
+     * @return A string of the action
+     */
     public String pressTVButton()
     {
 

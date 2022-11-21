@@ -1,5 +1,9 @@
 package state;
 
+/**
+ * A class for a type of state: The netflix state
+ * @author dbkaiser
+ */
 public class NetflixState implements State
 {
     private TV tv;
@@ -20,24 +24,40 @@ public class NetflixState implements State
         this.tv = tv;
     }
 
+    /**
+     * Action to perform when the home button is pressed
+     * @return A string of of the action 
+     */
     public String pressHomeButton()
     {
         tv.setState(tv.getHomeState());
         return "Loading the Home Screen...\n";
     }
 
+    /**
+     * Action to perform when the Netflix button is pressed
+     * @return A string of of the action 
+     */
     public String pressNetflixButton()
     {
         tv.setState(this);
         return "We are already in Netflix\n";
     }
 
+    /**
+     * Action to perform when the Hulu button is pressed
+     * @return A string of of the action 
+     */
     public String pressHuluButton()
     {
         tv.setState(tv.getHuluState());
         return "Loading Hulu...\n";
     }
 
+    /**
+     * Action to perform when movie button is pressed
+     * @return A string of of the action 
+     */
     public String pressMovieButton()
     {
         String temp = "Netflix Movies:\n";
@@ -48,6 +68,10 @@ public class NetflixState implements State
         return temp;
     }
 
+    /**
+     * Action to perform when tv button is pressed
+     * @return A string of of the action 
+     */
     public String pressTVButton()
     {
         String temp = "Netflix TV Shows:\n";
